@@ -1,0 +1,14 @@
+{
+  "name": "first-express",
+  "version": "1.0.0",
+  "description": "Meu primeiro servidor com Expres",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mauker",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
