@@ -39,7 +39,7 @@
 
 	//definição de function da controller
 	function AlunosCtrl($scope) {
-		
+		$scope.underAge = false;
 		$scope.alunos = [{name:"Gustavo",email:"gusTavo@gmail.com",age:10},
 						 {name:"Marcofa",email:"marco@gmail.com",age:20},
 						 {name:"Julio",email:"julio@gmail.com",age:11},
