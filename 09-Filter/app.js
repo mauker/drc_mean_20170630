@@ -19,12 +19,15 @@
 				if (isNaN(age)){ 
 				 	return
 				}
-				if(flag == true){
-					if(age >= 18 ){
+
+				if(flag === true && age >= 18){
+					
 						output.push(item)
-					}	
-				}else{
-					output.push(item)
+					
+				}else if(flag === false && age < 18 ){
+					
+						output.push(item)
+					
 				}
 			})
 			return output 
@@ -38,9 +41,9 @@
 	function AlunosCtrl($scope) {
 		
 		$scope.alunos = [{name:"Gustavo",email:"gusTavo@gmail.com",age:10},
-						 {name:"Marco",email:"marco@gmail.com",age:20},
+						 {name:"Marcofa",email:"marco@gmail.com",age:20},
 						 {name:"Julio",email:"julio@gmail.com",age:11},
-						 {name:"Gabriel",email:"gabRiel@gmail.com",age:33},
+						 {name:"Gabrielfj",email:"gabRiel@gmail.com",age:33},
 						 {name:"Comrrado",email:"conrrado@gmail.com",age:03},
 						 {name:"Priscila",email:"Priscila@gmail.com",age:16}];
 

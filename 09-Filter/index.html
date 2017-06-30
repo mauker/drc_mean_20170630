@@ -18,7 +18,7 @@
 		<label for="">Busca: </label><input type="text" ng-model="busca">
 
 		<ul>
-			<li ng-repeat="aluno in alunos | orderBy:'name':true  | filter:{name:busca} | underAge:true:'age' ">
+			<li ng-repeat="aluno in alunos | orderBy:'name':true  | filter:{busca} | underAge:false:'age' ">
 				{{aluno.name | uppercase }} - {{aluno.email | lowercase}} - {{aluno.age}}
 			</li>
 		</ul>
