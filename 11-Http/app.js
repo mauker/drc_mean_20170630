@@ -19,7 +19,7 @@
 		
 		$scope.$on("GetAluno",function(event, data) {
 			console.log("Recebeu", data);
-			$scope.funcionarios = data;
+			$scope.funcionarios = data.data;
 		});
 	}])
 
