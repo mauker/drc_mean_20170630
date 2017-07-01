@@ -4,14 +4,14 @@
 	//vamos criar nossa controller para o envio do dado no rest
 	app.controller("FormCtrl",["$scope","RestAPI",function ($scope, RestAPI) {
 		//vamos definir nossas variaveis globais
-		$scope.user = {};
+		$scope.user = {name:""};
 		//nossos métodos
 		$scope.search = function (user) {
 			//neste método receberemos o user do form
 			console.log(user);
 			RestAPI.getAlunoByQuery(user);
 		}
-		RestAPI.getAlunoByQuery();
+		RestAPI.getAlunoByQuery($scope.user);
 
 	}])
 	//controller do result
@@ -31,9 +31,16 @@
 
 		function getAlunoByQuery(query) {
 			
+			var urlFinal = endURL;
+
+			if(query.name != ""){
+				urlFinal = endURL + "/name/" +  query.name;
+			}
+		
+			
 			$http({
 			  method: 'GET',
-			  url: endURL
+			  url: urlFinal
 			}).then(function (data){
 
 				console.log(data);
