@@ -21,10 +21,22 @@ router.get("/alunos",function(req, res) {
 		
 		if(err){ res.send(err); }
 
-		res.json({"mauker":doc});
+		res.json(doc);
 	})
 
 })
+router.get("/alunos/name/:name",function(req, res) {
+	
+	Aluno.find({nome:new RegExp(req.params.name, 'i')}, "nome idade profissao curso notas" ,function (err, doc) {
+		
+		if(err){ res.send(err); }
+
+		console.log(doc, req.params.name)
+		res.json(doc);
+	})
+
+})
+
 router.get("/alunos/:id",function(req, res) {
 	
 	Aluno.findOne({_id:req.params.id}, "nome idade profissao curso notas" ,function (err, doc) {
@@ -34,6 +46,8 @@ router.get("/alunos/:id",function(req, res) {
 		res.json(doc);
 	})
 })
+
+
 
 router.post("/alunos", function (req, res) {
 
